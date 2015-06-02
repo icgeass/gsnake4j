@@ -79,9 +79,6 @@ public class Configuration {
         liColor.add(new Color(81, 174, 251, 180).brighter());
         liColor.add(new Color(146, 149, 254, 180).brighter());
         liColor.add(new Color(188, 178, 167, 180).brighter());
-        if (Constants.CFG_RANDOM_BACK_WHEN_START_UP) {
-            setBackImageByRandom();
-        }
     }
 
     private Configuration() {

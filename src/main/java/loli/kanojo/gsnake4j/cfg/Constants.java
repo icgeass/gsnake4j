@@ -63,7 +63,6 @@ public class Constants {
     public final static String PATH_IMAGE_ICON = "/icon.png";
     public final static String PATH_DEFAULT_IMAGE_BACK = "/back1.jpg";
     // 是否自动切换背景和nodes颜色，是否键盘敏感
-    public final static boolean CFG_RANDOM_BACK_WHEN_START_UP = true;
     public final static boolean CFG_AUTO_CHANGE_BACK_WHEN_NEXT_GAME = true;
     public final static boolean CFG_AUTO_CHANGE_NODES_WHEN_GOT_FOOD = true;
     public final static boolean CFG_IS_KEY_SENSITIVE = false;
