@@ -1,6 +1,7 @@
 package loli.kanojo.gsnake4j.bean;
 
 import loli.kanojo.gsnake4j.thread.Snake;
+import loli.kanojo.gsnake4j.utils.Kit;
 
 /**
  * 记录
@@ -90,7 +91,7 @@ public class Record implements Comparable<Record> {
 
     @Override
     public String toString() {
-        return "Record [id=" + id + ", beginTime=" + beginTime + ", alterableBeginTime=" + alterableBeginTime + ", endTime=" + endTime + ", score=" + score + ", foodNum=" + foodNum + ", runtime=" + runtime + "]";
+        return "Record [id=" + id + ", beginTime=" + Kit.getFormatedDate(beginTime) + ", alterableBeginTime=" + Kit.getFormatedDate(alterableBeginTime) + ", endTime=" + Kit.getFormatedDate(endTime) + ", score=" + score + ", foodNum=" + foodNum + ", runtime=" + runtime + "]";
     }
 
 }

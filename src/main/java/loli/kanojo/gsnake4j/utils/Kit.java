@@ -1,5 +1,7 @@
 package loli.kanojo.gsnake4j.utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -13,6 +15,8 @@ import java.util.Random;
 public class Kit {
 
     private final static Random rand = new Random();
+
+    private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
     public static void sortArrayRandom(Object[] arr) {
         if (null == arr || arr.length < 2) {
@@ -29,4 +33,9 @@ public class Kit {
             arr[index2] = o;
         }
     }
+
+    public static String getFormatedDate(Long date) {
+        return sdf.format(new Date(date));
+    }
+
 }

@@ -54,11 +54,12 @@ public class WindowKeyListener implements KeyListener {
                 System.exit(0);
             }
             Snake.getInstance().setIsRunable(isRunable);
-        }
-        // 暂停时只响应空格、退出键
-        if (!Snake.getInstance().getIsRunable()) {
-            logger.debug("暂停: 过滤按键{}", keycode);
-            return;
+        } else {
+            if (!Snake.getInstance().getIsRunable()) {
+                // 暂停时只响应空格、退出键
+                logger.debug("暂停: 过滤按键{}", keycode);
+                return;
+            }
         }
         // 周期响应(非键盘敏感)的情况下，若未到达响应周期则不作处理；防止连续两次快速改变方向时前进方向变为后退（在snake一个移动周期内）
         if (!Configuration.isKeySensitive() && System.currentTimeMillis() - lastMovedByInterval < Snake.getInstance().getInterval()) {

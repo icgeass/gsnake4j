@@ -83,11 +83,11 @@ public class Snake implements Runnable {
         while ((d = this.generateNodes()) == null);
         this.setDirection(d);
         this.setInterval(Constants.INTERVAL_MOVE_DEFAULT);
-        this.setIsRunable(true);
         Configuration.setBackImageByRandom();
         Configuration.setNodesColorByDefault();
         // 最后调用开始下一局, 因为会重置当前局, 并且startOrPause中会有当局时间的一些处理
         Configuration.newGame();
+        this.setIsRunable(true); // 这里的开始其实是会被过滤掉的，因为上一局结束下一局开始后只会先接受暂停
     }
 
     /**
@@ -122,9 +122,9 @@ public class Snake implements Runnable {
                 Configuration.setNodesColorByRandom();
             }
         } else {
-            this.setIsRunable(false);
             // 记录当前局数的结束时间
             Configuration.setCurrEndTime();
+            this.setIsRunable(false); //先设置结束时间，后设置暂停，因为暂停会根据结束时间判断当前局是否结束
             Toolkit.getDefaultToolkit().beep();
             // 对话框信息
             DialogInfo dialogInfo = Configuration.getDialogByKey(Constants.ID_YES_NO_WHEN_GAME_OVER);

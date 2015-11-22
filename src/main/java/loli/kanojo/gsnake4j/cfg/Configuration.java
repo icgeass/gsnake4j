@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import loli.kanojo.gsnake4j.bean.DialogInfo;
 import loli.kanojo.gsnake4j.bean.Record;
 import loli.kanojo.gsnake4j.ui.Window;
+import loli.kanojo.gsnake4j.utils.Kit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -114,7 +115,7 @@ public class Configuration {
      */
     public static void setCurrEndTime() {
         getCurrentRecord().setEndTime(System.currentTimeMillis());
-        logger.debug("设置第{}局结束时间{}", getCurrentRecord().getId(), getCurrentRecord().getEndTime());
+        logger.debug("设置第{}局结束时间{}", getCurrentRecord().getId(), Kit.getFormatedDate(getCurrentRecord().getEndTime()));
     }
 
     /**
@@ -125,9 +126,9 @@ public class Configuration {
      * @param isRunable
      */
     public static void startOrPause(boolean isRunable) {
-        // 下一局已经开始
+        // 下一局已经开始，并且下一局开始后肯定会先调用暂停
         if (getCurrentRecord().getEndTime() != Long.MIN_VALUE) {
-            // 在配置中重置时间记录信息，等待暂停
+            // 在配置中重置时间记录信息供下一局判断，等待暂停
             pausePoint = Long.MIN_VALUE;
             logger.debug("第{}局已结束, 忽略{}", getCurrentRecord().getId(), isRunable ? "开始" : "暂停");
             return;
@@ -137,7 +138,7 @@ public class Configuration {
             // 忽略连续暂停
             if (pausePoint == Long.MIN_VALUE) {
                 pausePoint = System.currentTimeMillis();
-                logger.debug("第{}局, 暂停: {}", getCurrentRecord().getId(), pausePoint);
+                logger.debug("第{}局, 暂停: {}", getCurrentRecord().getId(), Kit.getFormatedDate(pausePoint));
             } else {
                 logger.debug("第{}局, 忽略暂停", getCurrentRecord().getId());
             }
@@ -146,7 +147,7 @@ public class Configuration {
             if (pausePoint != Long.MIN_VALUE) {
                 getCurrentRecord().setAlterableBeginTime(getCurrentRecord().getAlterableBeginTime() + (System.currentTimeMillis() - pausePoint));;
                 pausePoint = Long.MIN_VALUE;
-                logger.debug("第{}局, 开始: {}, 设置新开始时间{}", getCurrentRecord().getId(), System.currentTimeMillis(), getCurrentRecord().getAlterableBeginTime());
+                logger.debug("第{}局, 开始: {}, 设置新开始时间{}", getCurrentRecord().getId(), Kit.getFormatedDate(System.currentTimeMillis()), Kit.getFormatedDate(getCurrentRecord().getAlterableBeginTime()));
             } else {
                 logger.debug("第{}局, 忽略开始", getCurrentRecord().getId());
             }
