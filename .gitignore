@@ -13,4 +13,11 @@ bin/
 .classpath
 .project
 
+*.class
+
+# idea相关
+.idea/
+target/
+*.iml
+
 
