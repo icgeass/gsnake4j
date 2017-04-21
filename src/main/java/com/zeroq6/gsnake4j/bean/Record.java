@@ -1,14 +1,14 @@
-package loli.kanojo.gsnake4j.bean;
+package com.zeroq6.gsnake4j.bean;
 
-import loli.kanojo.gsnake4j.thread.Snake;
-import loli.kanojo.gsnake4j.utils.Kit;
+import com.zeroq6.gsnake4j.thread.Snake;
+import com.zeroq6.gsnake4j.utils.Kit;
 
 /**
  * 记录
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Record implements Comparable<Record> {
@@ -91,7 +91,7 @@ public class Record implements Comparable<Record> {
 
     @Override
     public String toString() {
-        return "Record [id=" + id + ", beginTime=" + Kit.getFormatedDate(beginTime) + ", alterableBeginTime=" + Kit.getFormatedDate(alterableBeginTime) + ", endTime=" + Kit.getFormatedDate(endTime) + ", score=" + score + ", foodNum=" + foodNum + ", runtime=" + runtime + "]";
+        return "Record [id=" + id + ", beginTime=" + Kit.formatDate(beginTime) + ", alterableBeginTime=" + Kit.formatDate(alterableBeginTime) + ", endTime=" + Kit.formatDate(endTime) + ", score=" + score + ", foodNum=" + foodNum + ", runtime=" + runtime + "]";
     }
 
 }

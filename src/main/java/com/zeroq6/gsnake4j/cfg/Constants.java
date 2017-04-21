@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.cfg;
+package com.zeroq6.gsnake4j.cfg;
 
 import java.awt.Color;
 
@@ -8,7 +8,7 @@ import java.awt.Color;
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Constants {
@@ -16,20 +16,20 @@ public class Constants {
     // 菜单
     public final static String MENU_OPTIONS = "选项";
     public final static String MENU_CHANGE_BACK = "更换背景";
-    public final static String MENU_SETTIONS = "设置";
+    public final static String MENU_SETTINGS = "设置";
     public final static String MENU_HELP = "帮助";
     public final static String MENU_RESTART = "重新开始";
     public final static String MENU_EXIT = "退出";
     public final static String MENU_BACK_PREFIX = "背景";
     public final static String MENU_REAL_TIME_RESPONSE = "实时响应";
-    public final static String MENU_PERIIOD_REPONSE = "周期响应";
+    public final static String MENU_PERIOD_RESPONSE = "周期响应";
     public final static String MENU_HIGHEST_SCORE = "最高得分";
     public final static String MENU_OPERATION = "操作方法";
     public final static String MENU_ABOUT = "关于";
     // 关于
     public final static String ABOUT_AUTHOR = "icgeass";
     public final static String ABOUT_EMAIL = "icgeass@hotmail.com";
-    public final static String ABOUT_VERSION = "贪食蛇 - v1.0.4";
+    public final static String ABOUT_VERSION = "贪食蛇 - v1.0.5";
     // 加载
     public final static String TEXT_LOADING = "Loading...";
     // 普通常量
@@ -71,7 +71,7 @@ public class Constants {
     // JLabel信息框
     public final static String TEXT_JLABEL = " 第%s局           你的得分: %s           本局时间: %s           %s / %s / %s / %s";
     // 每局时间限制, 和日期格式化模式对应
-    public final static long GAME_TIEM_LIMITED = 60 * (60 - 1) * 1000;
+    public final static long GAME_TIME_LIMITED = 60 * (60 - 1) * 1000;
     // snake
     public final static Color SNAKE_COLOR = new Color(255, 255, 255, 180).brighter();
     public final static int SNAKE_NODE_NUM = 5;

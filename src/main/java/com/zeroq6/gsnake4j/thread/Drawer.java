@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.thread;
+package com.zeroq6.gsnake4j.thread;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,20 +6,19 @@ import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
+import com.zeroq6.gsnake4j.bean.Node;
+import com.zeroq6.gsnake4j.bean.Record;
+import com.zeroq6.gsnake4j.cfg.Configuration;
+import com.zeroq6.gsnake4j.cfg.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import loli.kanojo.gsnake4j.bean.Node;
-import loli.kanojo.gsnake4j.bean.Record;
-import loli.kanojo.gsnake4j.cfg.Configuration;
-import loli.kanojo.gsnake4j.cfg.Constants;
 
 /**
  * 重绘线程
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Drawer implements Runnable {
@@ -62,7 +61,7 @@ public class Drawer implements Runnable {
         int scorePerFood = Constants.SCORE_PER_FOOD + (int) ((Constants.INTERVAL_MOVE_DEFAULT - interval) * Constants.SCORE_PER_INTERVAL);
         int speed = (Constants.INTERVAL_MOVE_DEFAULT - interval) / Constants.INTERVAL_MOVE_PER_CHANGE;
         int foodNum = record.getFoodNum();
-        Configuration.getWindow().getjLabel().setText(String.format(Constants.TEXT_JLABEL, String.valueOf(record.getId()), String.valueOf(record.getScore()), sdf.format(record.getRuntime()), String.valueOf(interval), String.valueOf(scorePerFood), speed < 0 ? String.valueOf(speed) : "+" + speed, String.valueOf(foodNum)));
+        Configuration.getWindow().getLabel().setText(String.format(Constants.TEXT_JLABEL, String.valueOf(record.getId()), String.valueOf(record.getScore()), sdf.format(record.getRuntime()), String.valueOf(interval), String.valueOf(scorePerFood), speed < 0 ? String.valueOf(speed) : "+" + speed, String.valueOf(foodNum)));
         // 背景绘制。图片不存在用黑底填充；存在，填充背景图, 如果加载背景图失败则仍使用黑底填充
         if (null != this.getClass().getResource(Constants.PATH_IMAGE_ICON)) {
             if (!fillBackGroundWithImage(Configuration.getCurrBackPath(), 0, 0, Constants.CANVAS_WIDTH, Constants.CANVAS_HEIGHT)) {

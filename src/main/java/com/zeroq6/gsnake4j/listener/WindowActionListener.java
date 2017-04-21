@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.listener;
+package com.zeroq6.gsnake4j.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,21 +7,21 @@ import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import com.zeroq6.gsnake4j.cfg.Configuration;
+import com.zeroq6.gsnake4j.cfg.Constants;
+import com.zeroq6.gsnake4j.thread.Snake;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import loli.kanojo.gsnake4j.bean.DialogInfo;
-import loli.kanojo.gsnake4j.bean.Record;
-import loli.kanojo.gsnake4j.cfg.Configuration;
-import loli.kanojo.gsnake4j.cfg.Constants;
-import loli.kanojo.gsnake4j.thread.Snake;
+import com.zeroq6.gsnake4j.bean.DialogInfo;
+import com.zeroq6.gsnake4j.bean.Record;
 
 /**
  * 监听菜单点击
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class WindowActionListener implements ActionListener {
@@ -54,7 +54,7 @@ public class WindowActionListener implements ActionListener {
         } else if (command.equals(Constants.MENU_REAL_TIME_RESPONSE)) {
             Configuration.setKeySensitive(true);
             JOptionPane.showMessageDialog(jFrame, dialogInfo.getMessage(), dialogInfo.getTitle(), dialogInfo.getMessageType());
-        } else if (command.equals(Constants.MENU_PERIIOD_REPONSE)) {
+        } else if (command.equals(Constants.MENU_PERIOD_RESPONSE)) {
             Configuration.setKeySensitive(false);
             JOptionPane.showMessageDialog(jFrame, dialogInfo.getMessage(), dialogInfo.getTitle(), dialogInfo.getMessageType());
         } else if (command.equals(Constants.MENU_HIGHEST_SCORE)) {

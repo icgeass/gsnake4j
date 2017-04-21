@@ -1,19 +1,19 @@
-package loli.kanojo.gsnake4j.run;
+package com.zeroq6.gsnake4j.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import loli.kanojo.gsnake4j.cfg.Configuration;
-import loli.kanojo.gsnake4j.thread.Drawer;
-import loli.kanojo.gsnake4j.thread.Snake;
-import loli.kanojo.gsnake4j.ui.Window;
+import com.zeroq6.gsnake4j.cfg.Configuration;
+import com.zeroq6.gsnake4j.thread.Drawer;
+import com.zeroq6.gsnake4j.thread.Snake;
+import com.zeroq6.gsnake4j.ui.Window;
 
 /**
  * 入口
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class App {

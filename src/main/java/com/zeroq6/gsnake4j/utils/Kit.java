@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.utils;
+package com.zeroq6.gsnake4j.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.util.Random;
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Kit {
@@ -34,7 +34,7 @@ public class Kit {
         }
     }
 
-    public static String getFormatedDate(Long date) {
+    public static String formatDate(Long date) {
         return sdf.format(new Date(date));
     }
 

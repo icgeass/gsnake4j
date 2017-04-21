@@ -1,11 +1,11 @@
-package loli.kanojo.gsnake4j.bean;
+package com.zeroq6.gsnake4j.bean;
 
 /**
  * 节点
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Node {

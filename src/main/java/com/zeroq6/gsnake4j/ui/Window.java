@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.ui;
+package com.zeroq6.gsnake4j.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
@@ -11,24 +11,24 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import loli.kanojo.gsnake4j.cfg.Configuration;
-import loli.kanojo.gsnake4j.cfg.Constants;
-import loli.kanojo.gsnake4j.listener.WindowActionListener;
-import loli.kanojo.gsnake4j.listener.WindowKeyListener;
+import com.zeroq6.gsnake4j.cfg.Configuration;
+import com.zeroq6.gsnake4j.cfg.Constants;
+import com.zeroq6.gsnake4j.listener.WindowActionListener;
+import com.zeroq6.gsnake4j.listener.WindowKeyListener;
 
 /**
  * 窗口
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Window extends JFrame {
 
     private final static long serialVersionUID = 1L;
     private Canvas canvas;
-    private JLabel jLabel;
+    private JLabel label;
 
     public Window() {
         if (null != this.getClass().getResource(Constants.PATH_IMAGE_ICON)) {
@@ -42,8 +42,8 @@ public class Window extends JFrame {
         this.setTitle(Constants.ABOUT_VERSION);
         this.addKeyListener(new WindowKeyListener(this));
         this.setJMenuBar(new JMenuBar());
-        String[] menuLab = { Constants.MENU_OPTIONS, Constants.MENU_CHANGE_BACK, Constants.MENU_SETTIONS, Constants.MENU_HELP };
-        String[][] menuItemLab = { { Constants.MENU_RESTART, Constants.MENU_EXIT }, Configuration.getMenuItemBackImageNames(), { Constants.MENU_PERIIOD_REPONSE, Constants.MENU_REAL_TIME_RESPONSE }, { Constants.MENU_HIGHEST_SCORE, Constants.MENU_OPERATION, Constants.MENU_ABOUT } };
+        String[] menuLab = { Constants.MENU_OPTIONS, Constants.MENU_CHANGE_BACK, Constants.MENU_SETTINGS, Constants.MENU_HELP };
+        String[][] menuItemLab = { { Constants.MENU_RESTART, Constants.MENU_EXIT }, Configuration.getMenuItemBackImageNames(), { Constants.MENU_PERIOD_RESPONSE, Constants.MENU_REAL_TIME_RESPONSE }, { Constants.MENU_HIGHEST_SCORE, Constants.MENU_OPERATION, Constants.MENU_ABOUT } };
         for (int i = 0; i < menuLab.length; i++) {
             JMenu jMenu = new JMenu(menuLab[i]);
             this.getJMenuBar().add(jMenu);
@@ -56,8 +56,8 @@ public class Window extends JFrame {
         this.setLayout(new BorderLayout());
 
         Container container = this.getContentPane();
-        jLabel = new JLabel(Constants.TEXT_LOADING, JLabel.LEFT);
-        container.add(jLabel, BorderLayout.NORTH);
+        label = new JLabel(Constants.TEXT_LOADING, JLabel.LEFT);
+        container.add(label, BorderLayout.NORTH);
 
         canvas = new Canvas();
         canvas.setSize(Constants.CANVAS_WIDTH, Constants.CANVAS_HEIGHT);
@@ -72,8 +72,8 @@ public class Window extends JFrame {
         return canvas;
     }
 
-    public JLabel getjLabel() {
-        return jLabel;
+    public JLabel getLabel() {
+        return label;
     }
 
 }

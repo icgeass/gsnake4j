@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>loli.kanojo</groupId>
+	<groupId>com.zeroq6</groupId>
 	<artifactId>gsnake4j</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
 	<name>gsnake4j</name>
@@ -35,6 +35,15 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<!--http://maven.apache.org/surefire/maven-surefire-plugin/examples/skipping-test.html-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -45,7 +54,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>loli.kanojo.gsnake4j.run.App</mainClass>
+							<mainClass>com.zeroq6.gsnake4j.app.App</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

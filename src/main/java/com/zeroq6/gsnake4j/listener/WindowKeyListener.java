@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.listener;
+package com.zeroq6.gsnake4j.listener;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -6,22 +6,22 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import com.zeroq6.gsnake4j.cfg.Constants;
+import com.zeroq6.gsnake4j.thread.Snake;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import loli.kanojo.gsnake4j.bean.DialogInfo;
-import loli.kanojo.gsnake4j.bean.Direction;
-import loli.kanojo.gsnake4j.cfg.Configuration;
-import loli.kanojo.gsnake4j.cfg.Constants;
-import loli.kanojo.gsnake4j.thread.Drawer;
-import loli.kanojo.gsnake4j.thread.Snake;
+import com.zeroq6.gsnake4j.bean.DialogInfo;
+import com.zeroq6.gsnake4j.bean.Direction;
+import com.zeroq6.gsnake4j.cfg.Configuration;
+import com.zeroq6.gsnake4j.thread.Drawer;
 
 /**
  * 监听键盘按键
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class WindowKeyListener implements KeyListener {

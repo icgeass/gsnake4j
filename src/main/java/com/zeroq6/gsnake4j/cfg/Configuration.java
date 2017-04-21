@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.cfg;
+package com.zeroq6.gsnake4j.cfg;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import loli.kanojo.gsnake4j.bean.DialogInfo;
-import loli.kanojo.gsnake4j.bean.Record;
-import loli.kanojo.gsnake4j.ui.Window;
-import loli.kanojo.gsnake4j.utils.Kit;
+import com.zeroq6.gsnake4j.ui.Window;
+import com.zeroq6.gsnake4j.utils.Kit;
+import com.zeroq6.gsnake4j.bean.DialogInfo;
+import com.zeroq6.gsnake4j.bean.Record;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Configuration {
@@ -54,7 +54,7 @@ public class Configuration {
     static {
         liRecord.add(new Record(0));
         mapId2Dialog.put(Constants.MENU_REAL_TIME_RESPONSE, new DialogInfo("按键已更改为实时响应", "提示", JOptionPane.WARNING_MESSAGE));
-        mapId2Dialog.put(Constants.MENU_PERIIOD_REPONSE, new DialogInfo("按键已更改为周期响应", "提示", JOptionPane.WARNING_MESSAGE));
+        mapId2Dialog.put(Constants.MENU_PERIOD_RESPONSE, new DialogInfo("按键已更改为周期响应", "提示", JOptionPane.WARNING_MESSAGE));
         mapId2Dialog.put(Constants.MENU_HIGHEST_SCORE, new DialogInfo("局数: 第%s局\r\n获得食物数: %s\r\n得分: %s\r\n所用时间: %s", "最高得分", JOptionPane.INFORMATION_MESSAGE));
         mapId2Dialog.put(Constants.MENU_OPERATION, new DialogInfo("方向键: 控制方向和速度\r\n空格键: 开始/暂停\r\nShift键: 恢复默认速度\r\nEsc键 : 退出\r\n注意: ☆周期响应模式下按键过快可导致操作失灵☆", "使用帮助", JOptionPane.QUESTION_MESSAGE));
         mapId2Dialog.put(Constants.MENU_ABOUT, new DialogInfo("作者: %s\r\n邮箱: %s\r\n版本: %s", "关于", JOptionPane.INFORMATION_MESSAGE));
@@ -115,7 +115,7 @@ public class Configuration {
      */
     public static void setCurrEndTime() {
         getCurrentRecord().setEndTime(System.currentTimeMillis());
-        logger.debug("设置第{}局结束时间{}", getCurrentRecord().getId(), Kit.getFormatedDate(getCurrentRecord().getEndTime()));
+        logger.debug("设置第{}局结束时间{}", getCurrentRecord().getId(), Kit.formatDate(getCurrentRecord().getEndTime()));
     }
 
     /**
@@ -138,7 +138,7 @@ public class Configuration {
             // 忽略连续暂停
             if (pausePoint == Long.MIN_VALUE) {
                 pausePoint = System.currentTimeMillis();
-                logger.debug("第{}局, 暂停: {}", getCurrentRecord().getId(), Kit.getFormatedDate(pausePoint));
+                logger.debug("第{}局, 暂停: {}", getCurrentRecord().getId(), Kit.formatDate(pausePoint));
             } else {
                 logger.debug("第{}局, 忽略暂停", getCurrentRecord().getId());
             }
@@ -147,7 +147,7 @@ public class Configuration {
             if (pausePoint != Long.MIN_VALUE) {
                 getCurrentRecord().setAlterableBeginTime(getCurrentRecord().getAlterableBeginTime() + (System.currentTimeMillis() - pausePoint));;
                 pausePoint = Long.MIN_VALUE;
-                logger.debug("第{}局, 开始: {}, 设置新开始时间{}", getCurrentRecord().getId(), Kit.getFormatedDate(System.currentTimeMillis()), Kit.getFormatedDate(getCurrentRecord().getAlterableBeginTime()));
+                logger.debug("第{}局, 开始: {}, 设置新开始时间{}", getCurrentRecord().getId(), Kit.formatDate(System.currentTimeMillis()), Kit.formatDate(getCurrentRecord().getAlterableBeginTime()));
             } else {
                 logger.debug("第{}局, 忽略开始", getCurrentRecord().getId());
             }

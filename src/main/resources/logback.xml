@@ -7,11 +7,12 @@
 			</pattern>
 		</encoder>
 	</appender>
-	<logger name="loli.kanojo.gsnake4j.thread.Drawer" level="OFF" />
-	<logger name="loli.kanojo.gsnake4j.thread.Snake" level="DEBUG" />
-	<logger name="loli.kanojo.gsnake4j.cfg.Configuration" level="DEBUG" />
-	<logger name="loli.kanojo.gsnake4j.run.App" level="DEBUG" />
-	<logger name="loli.kanojo.gsnake4j.listener" level="DEBUG" />
+	<logger name="com.zeroq6.gsnake4j.thread.Drawer" level="OFF" />
+	<logger name="com.zeroq6.gsnake4j.thread.Snake" level="DEBUG" />
+	<logger name="com.zeroq6.gsnake4j.cfg.Configuration" level="DEBUG" />
+	<logger name="com.zeroq6.gsnake4j.app.App" level="DEBUG" />
+	<logger name="com.zeroq6.gsnake4j.listener.WindowActionListener" level="DEBUG" />
+	<logger name="com.zeroq6.gsnake4j.listener.WindowKeyListener" level="DEBUG" />
 	<root level="ERROR">
 		<appender-ref ref="STDOUT" />
 	</root>

@@ -1,4 +1,4 @@
-package loli.kanojo.gsnake4j.thread;
+package com.zeroq6.gsnake4j.thread;
 
 import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
@@ -7,14 +7,14 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import loli.kanojo.gsnake4j.bean.DialogInfo;
-import loli.kanojo.gsnake4j.bean.Direction;
-import loli.kanojo.gsnake4j.bean.Node;
-import loli.kanojo.gsnake4j.bean.Record;
-import loli.kanojo.gsnake4j.cfg.Configuration;
-import loli.kanojo.gsnake4j.cfg.Constants;
-import loli.kanojo.gsnake4j.listener.WindowKeyListener;
-import loli.kanojo.gsnake4j.utils.Kit;
+import com.zeroq6.gsnake4j.bean.Node;
+import com.zeroq6.gsnake4j.bean.DialogInfo;
+import com.zeroq6.gsnake4j.bean.Direction;
+import com.zeroq6.gsnake4j.bean.Record;
+import com.zeroq6.gsnake4j.cfg.Configuration;
+import com.zeroq6.gsnake4j.cfg.Constants;
+import com.zeroq6.gsnake4j.listener.WindowKeyListener;
+import com.zeroq6.gsnake4j.utils.Kit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author icgeass@hotmail.com
  * @date 2015年6月1日
- * @version gsnake4j - v1.0.4
+ * @version gsnake4j - v1.0.5
  * @url https://github.com/icgeass/gsnake4j
  */
 public class Snake implements Runnable {
@@ -113,7 +113,7 @@ public class Snake implements Runnable {
         } else {
             logger.debug("实时响应: {}", System.currentTimeMillis());
         }
-        if (record.getRuntime() <= Constants.GAME_TIEM_LIMITED && luckyOrUnlucky != Constants.SNAKE_EAT_Oooooops) {
+        if (record.getRuntime() <= Constants.GAME_TIME_LIMITED && luckyOrUnlucky != Constants.SNAKE_EAT_Oooooops) {
             if (luckyOrUnlucky == Constants.SNAKE_EAT_LUCKY) {
                 this.setFood(generateFood());
                 record.setScore(record.getScore() + Constants.SCORE_PER_FOOD + (int) ((Constants.INTERVAL_MOVE_DEFAULT - interval) * Constants.SCORE_PER_INTERVAL));
@@ -141,7 +141,7 @@ public class Snake implements Runnable {
             // 当同时打破记录并且超时时提示打破记录
             if (Integer.valueOf(score) > Configuration.getHighestRecord().getScore()) {
                 tips = Constants.CONFIRM_MSG_BREAK_RECORD;
-            } else if (record.getRuntime() > Constants.GAME_TIEM_LIMITED) {
+            } else if (record.getRuntime() > Constants.GAME_TIME_LIMITED) {
                 tips = Constants.CONFIRM_MSG_TIME_OUT;
             }
             // try again?
