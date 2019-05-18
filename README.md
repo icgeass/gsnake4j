@@ -1,5 +1,5 @@
 # gsnake4j
-![logo](https://github.com/icgeass/gsnake4j/raw/master/etc/logo.png)
+<!-- #![logo](https://github.com/icgeass/gsnake4j/raw/master/etc/logo.png) -->
 
 ### 介绍
 
